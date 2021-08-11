@@ -1,0 +1,358 @@
+@charset "utf-8";
+@import  "mixin", "reset";
+
+/* all - font-family: 'Noto Sans KR' */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+/* table - font-family: 'Spoqa Han Sans' */
+@import url('https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css');
+// @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+
+/* footer - logo font-family: 'Poppins' */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+$aColor : #222;
+
+/* skipNav */
+#skipNav {
+    position:absolute; top: -1000px; left:0; z-index:9999; width: 100%; height: 80px; background: $aColor; text-align: center;
+    a {
+        position: fixed;
+        display: block;
+        width: 100%;
+        left:50%;
+        transform: translateX(-50%);
+        font: bold 16px/40px 'Noto Sans KR'; color: #fff;
+        background: $aColor;
+        
+        &:hover, &:focus, &:active {top: 0;}
+    }
+}
+
+/* header */
+#header {
+    width: 100%;
+
+    .inner {
+        width: 1180px; margin: 0px auto; box-sizing: border-box; display: flex; flex-wrap: wrap; justify-content: space-between; align-content: flex-end; position: relative;
+
+        &::before {
+            content: ""; width: 100%; height: 10px; background: #222; position: absolute; bottom: 0px; left: 0px;
+        }
+
+        h1 {
+            width: 200px; height: 90px; font-size: 0;  display: inline-flex; justify-content: flex-start; align-content: center; flex-wrap: wrap;
+            a {font: bold 28px/1 'Malgun Gothic'; color: #222; width: 100%; text-align: center; }
+            span {font: 12px/1 "arial"; color: #444; width: 100%; text-align: center; letter-spacing: 1px;}
+        }
+
+        #gnb {
+            display: inline-flex;
+
+            >li {
+
+                >a {
+                    display: flex; height: 80px; padding: 0px 20px; box-sizing: border-box; 
+                    align-items: center; position: relative; font: bold 15px/1 "arial"; color: #444;
+    
+                    &::after {
+                        content: ""; display: block; width: 0%; height: 10px; background: #D60035; position: absolute; bottom: -10px; left: 50%; transition: 0.5s;
+                    }
+    
+                    &:hover {
+                        font-weight: bold; color: #D60035;
+
+                        &::after {
+                            width: 100%; left: 0%;
+                        }
+                    }
+                    
+                }
+
+                .sub {
+                    width: 100%; height: 200px; border: 1px solid #222;  position: absolute; top: 90px; left: 0px; background: #fff; display: none;
+                    
+                    h2 {
+                        float: left;
+                        border: 1px solid yellowgreen;
+                    }
+                    
+
+                    ul {
+                        border: 1px solid red;
+                        &::after {content: ""; display: block; clear: both;}
+                        li {float: left;}
+                    }
+                }
+            } 
+            
+        }
+
+        .util {
+            display: inline-flex;  align-content: center; flex-wrap: wrap;
+
+            li a {
+                color: #666; margin-left: 20px;
+            }
+        }
+    }
+}
+
+/* section */
+#section {
+    width: 100%; padding: 50px 0 100px;
+    .inner {
+        width: 1180px; margin: 0 auto;
+        > span {font: bold 14px/1 'Manrope'; color: #0c1a31; padding: 50px 0 10px; text-align: center; display: block; letter-spacing: 2px;}
+        > h1 {font: bold 36px/1 'Malgun Gothic'; color: #0c1a31; padding: 0 0 50px; text-align: center;}
+
+        .box_menu {
+            width: 1000px; margin: 0 auto;
+            &::after {content: ''; display: block; clear: both;}
+            article {
+                float: left; width: calc(100% / 3); background: #eaeaea; margin:0px 0 50px; text-align: center;
+                a { display: block; padding: 15px 0;
+                    font: bold 14px/1 'Noto Sans KR'; color:#0c1a31; width: 100%; height: 100%; 
+                    &:hover {
+                        background: #0c1a31; width: 100%; height: 100%; color :#fff;
+                    }
+                    
+                }
+            }
+        }
+
+        .pagination {
+            width: 100%; text-align: center; margin-top: 30px;
+
+            &::after {content: ''; display: block; clear: both;}
+            .prev {
+                font-size: 14px; color: #555;
+            }
+            .next {
+                font-size: 14px; color: #555;
+            }
+
+            .numbers {
+                display: inline-block; font-size: 0;
+                a {
+                    display: inline-block;
+                    width: 30px; height: 30px;
+                    font: 11px/30px 'arial'; color: #666; text-align: center; margin: 0 5px;
+                    &:hover {
+                        background: #19191a;
+                        color: #fff;
+                    }
+                }
+            }
+        } //pagination
+    }
+}
+
+/* footer */
+#footer {
+    .upper { position: relative; padding: 60px 40px;
+        background: #19191a; color: #fff;
+        .inner {
+            width: 1180px; margin: 0 auto;
+
+            &::after {content: ''; display: block; clear: both;}
+            article {
+                float: left; width: calc(100% / 3);
+                h2 {
+                    font: 500 18px/30px 'Noto Sans KR';
+                    margin-bottom: 20px;
+                }
+                h2.logo {
+                    font: 24px/1 'Poppins';
+                    margin-bottom: 20px;
+                }
+                div {
+                    margin-bottom: 15px;
+                    p {font: normal 13px/30px 'Noto Sans KR'; color: #929191;}
+                }
+                
+                ul {
+                    text-align: left;
+                    li {
+                        display: inline-block; margin-right: 30px;
+                        a { 
+                            svg {color: #929191; font-size: 25px; transition: all 0.5s;}
+                            &:hover svg {animation: bounce 1.5s ease;}
+                        }
+                    }
+                }
+                &:last-of-type {
+                    p {
+                        margin-bottom: 10px;
+                        a {
+                            position: relative; display: inline-block; font: normal 13px/30px 'Noto Sans KR'; color: #929191; letter-spacing: 1px;
+                            
+                            &:hover {color: #fff;}
+                            &::after {content: ''; display: block; position: absolute; width: 100%; left: 0px;  bottom: 0; width: 100%; height:1px; background: #929191;}
+                            svg {
+                                margin-left: 10px; 
+                            }
+        
+                        }
+                        &:last-of-type {margin-bottom: 0;}
+                    }
+                }
+            } //article
+        }
+    }
+    .lower { position: relative; width: 100%;
+        background: black;
+        .inner {
+            width: 1180px; margin: 0 auto; padding: 15px 0; text-align: center;
+            p {font:11px/1 'Noto Sans KR'; color: #929191;}
+        }
+    }
+}
+
+/* animation */
+@keyframes bounce {
+    0% {transform: scale(1.1);}
+    10% {transform: scale(1.0);}
+    20% {transform: scale(1.1);}
+    80% {transform: scale(1.1);}
+    90% {transform: scale(1.0);}
+    100% {transform: scale(1.1);}    
+}
+
+/*---------------------------------------- tablet  ----------------------------------------*/
+@include tablet {
+    /* header */
+    #header {
+        .inner {
+            width: 100%;
+        }
+    }
+
+    /* section */
+    #section {
+        .inner {
+            width: 100%;
+
+            .box_menu {
+                width: 1000px; margin: 0 auto;
+                &::after {content: ''; display: block; clear: both;}
+                article {
+                    float: left; width: calc(100% / 3); background: #eaeaea; margin:0px 0 50px; text-align: center;
+                    a { display: block; padding: 15px 0;
+                        font: bold 14px/1 'Noto Sans KR'; color:#0c1a31; width: 100%; height: 100%; 
+                        &:hover {
+                            background: #0c1a31; width: 100%; height: 100%; color :#fff;
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+    
+    /* footer */
+    #footer {
+        .upper {
+            .inner {
+                width: 100%;
+                article {
+                    float: left; width: calc(100% / 2);
+
+                    ul {
+                        text-align: left;
+                        li {
+                            display: inline-block; margin-right: 30px;
+                            a { 
+                                svg {color: #929191; font-size: 25px; transition: all 0.5s;}
+                                &:hover svg {animation: bounce 1.5s ease;}
+                            }
+                        }
+                    }
+                    &:last-of-type {
+                        margin-top: 20px;
+                    }
+                } //article
+            }
+        }
+        .lower { width: 100%;
+            .inner {
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width:800px){
+    #footer {
+        .upper{
+            .inner{
+                article {
+                    ul {
+                        text-align: left;
+                        li {
+                            width: calc(100% / 5);
+                            display: inline-block; margin-right: 30px;
+
+                            &:nth-of-type(n+4):nth-of-type(-n+6){
+                                margin-top: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:610px){
+    #footer {
+        .upper{
+            .inner{
+                article {
+                    ul {
+                        text-align: left;
+                        li {
+                            width: calc(100% / 4);
+                            display: inline-block; margin-right: 0px;
+
+                            &:nth-of-type(n+4):nth-of-type(-n+6){
+                                margin-top: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+/*---------------------------------------- mobile  ----------------------------------------*/
+@include mobile {
+    #footer{
+        .upper {
+            padding: 50px 20px;
+            .inner {
+                article {
+                    float: left; width: calc(100% / 1);
+                    text-align: center;
+
+                    ul {
+                        text-align: center;
+                    }
+                    &:first-of-type{
+                        div {
+                            &:first-of-type{
+                                p {display: none;}
+                            }
+                        }
+                    }
+                } //article
+            }
+        }
+        .lower { width: 100%;
+        }  
+    }
+}

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loaction</title>
+
+    <!-- fontawesome(SVG) -->
+    <script src="https://kit.fontawesome.com/645f5ebcf1.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="img/logo.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f50c6075b816de5dc656db0e02a87d52"></script>
+    <script defer src="js/custom.js"></script>
+    <script defer src="js/location.js"></script>
+</head>
+<body>
+
+    <!-- skipNavigation -->
+    <div id="skipNav">
+        <a href="#content">본문바로가기</a>
+	    <a href="#gnb">메뉴바로가기</a>
+	    <a href="#footer">푸터바로가기</a>
+    </div>
+
+    <!-- header -->
+    <header id="header">
+        <div class="inner">
+            <h1>
+                <a href="index.html">PORTFOLIO</a>
+                <span>Web Publisher Portfolio</span>
+            </h1>
+
+            <ul id="gnb">
+                <li>
+                    <a href="department.html">DEPARTMENT</a>
+                    <div class="sub">
+                        <h2>DEPARTMENT</h2>
+                        <ul>
+                            <li><a href="#">2depth</a></li>
+                            <li><a href="#">2depth</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="community.html">COMMUNITY</a>
+                    <div class="sub">
+                        <h2>COMMUNITY</h2>
+                        <ul>
+                            <li><a href="#">2depth</a></li>
+                            <li><a href="#">2depth</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="gallery.html">GALLERY</a>
+                    <div class="sub">
+                        <h2>GALLERY</h2>
+                        <ul>
+                            <li><a href="#">2depth</a></li>
+                            <li><a href="#">2depth</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="youtube.html">YOUTUBE</a>
+                    <div class="sub">
+                        <h2>YOUTUBE</h2>
+                        <ul>
+                            <li><a href="#">2depth</a></li>
+                            <li><a href="#">2depth</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="location.html">LOCATION</a>
+                    <div class="sub">
+                        <h2>LOCATION</h2>
+                        <ul>
+                            <li><a href="#">2depth</a></li>
+                            <li><a href="#">2depth</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="join.html">MEMBER</a>
+                    <div class="sub">
+                        <h2>MEMBER</h2>
+                        <ul>
+                            <li><a href="#">2depth</a></li>
+                            <li><a href="#">2depth</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="util">
+                <li>
+                    <a href="#">
+                        <i class="fas fa-search"></i>
+                    </a>            
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <!-- table coding -->
+
+    <!-- section -->
+    <section id="section" class="location">
+        <div class="inner">
+            <span>LOCATION</span>
+            <h1>교통정보</h1>
+
+            <ul class="traffic">
+                <li><a href="#">교통정보 보기</a></li>
+                <li class="on"><a href="#">교통정보 끄기</a></li>
+            </ul>
+       
+            <ul class="branch">
+                <li data-index="0"><a href="#">본점</a></li>
+                <li data-index="1"><a href="#">지점1</a></li>
+                <li data-index="2"><a href="#">지점2</a></li>
+            </ul>
+
+            <div id="map"></div>
+            
+            <h2>버스노선 안내</h2>
+            <table summary="버스 노선에 대한 안내">
+                <tbody>
+                    <tr>
+                        <th class="bus" abbr="bus" scope="col">시내버스</th>
+                        <td class="how" abbr="how" scope="col">
+                            <ul>
+                                <li>은혜와 진리교회 방면 : 11, 22, 23, 30, 30-2, 30-7. 52, 66, 99, 123, 350</li>
+                                <li>안산문화예술의전당 하천 방면 : 6-1, 97</li>
+                                <li>고잔역 앞 : 98, 99-1, 500</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="bus" abbr="bus" scope="col">좌석버스</th>
+                        <td class="how" abbr="how" scope="col">707, 909</td>
+                    </tr>
+                    <tr>
+                        <th class="bus" abbr="bus" scope="col">시외버스</th>
+                        <td class="how" abbr="how" scope="col">
+                            <ul>
+                                <li>30-2, 350 : 수암동 - 예술인아파트 - 안산문화재단</li>
+                                <li>15, 22 : 인천- 주안 - 만수동- 부천시 - 월곳 - 시화아파트 - 안산역 - 안산문화재단</li>
+                                <li>707, 909 : 수원 - 상록수역 - 성안고등학교 - 시외버스터미널 - 예술인아파트 - 안산시청 - 안산문화재단</li>
+                                <li> 737 : 부평 - 부천 - 월곶 - 안산역 - 라성호텔 - 안산문화재단</li>
+                                <li>8467 : 성남터미널 - 구리고속도로 - 서울외곽고속도로 - 군포역 - 외버스터미널 - 예술인아파트 - 안산문화재단</li>
+                                <li>700, 700-1, 3300 : 강남역 - 양재역 - 고속도로 - 상록수역 - 예술인아파트 - 중앙중학교 - 안산시청 - 안산문화재단</li>
+                                <li>* 안산경찰서 앞에서 하차 후 도보로 5분 소요.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </section>
+    <!-- //section -->
+
+    <footer id="footer">
+        <div class="upper">
+            <div class="inner">
+                <article>
+                    <h1 class="hidden">주소지, SNS, Download</h1>
+                    <h2 class="logo">JEE DAWON</h2>
+    
+                    <div><p>Lorem ipsum dolor sit amet.<br>경기도 안산시 상록구 정재로11길 XX,<br>XXX하우스 (001111)</p></div>
+    
+                    <div>
+                        <p>PH : 010-9007-0030</p>
+                        <p>E-MAIL : dawon716@naver.com</p>
+                    </div>
+                </article>
+                <article>
+                    <h2>FOLLOW US</h2>
+                    <ul>
+                        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                        <li><a href="#"><i class="fab fa-github"></i></a></li>
+                        <li><a href="#"><i class="fab fa-discord"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitch"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                    </ul>
+                </article>
+                <article>
+                    <h2>DOWNLOAD</h2>
+                    <p><a href="#">Lorem, ipsum dolor 이력서<i class="fas fa-download"></i></a></p>
+                    <p><a href="#">Lorem 자기소개서<i class="fas fa-download"></i></a></p>
+                </article>
+            </div>
+        </div>
+        <!-- //upper -->
+        <div class="lower">
+            <div class="inner">
+                <p>Copyright &copy; 2021 Jee Dawon. All rights reserved.</p>
+            </div>
+        </div>
+        <!-- //lower -->
+    </footer>
+    <!-- //footer -->
+</body>
+</html>
